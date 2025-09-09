@@ -1,0 +1,4 @@
+myNextApp:
+  component: "@sls-next/serverless-component@3.7.0"
+  inputs:
+    domain: ["demo", "tu-dominio", "com"] # opcional si tienes dominio
