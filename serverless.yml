@@ -1,8 +1,16 @@
-service: dummy-next-lambda
+service: next-lambda-demo
 
-frameworkVersion: '3'
+frameworkVersion: "3"
 
-myNextApp:
-  component: "@sls-next/serverless-component@3.7.0"
-  inputs:
-    domain: ["demo", "tu-dominio", "com"] # opcional si tienes dominio
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
