@@ -2,10 +2,23 @@ service: next-lambda-demo
 
 frameworkVersion: "3"
 
+myNextApp:
+  component: "@sls-next/serverless-component@3.7.0"
+  inputs:
+    runtime: nodejs18.x
+    region: us-east-1
+
 provider:
   name: aws
   runtime: nodejs18.x
   region: us-east-1
+
+package:
+  patterns:
+    - '!node_modules/**'
+    - '!**/*.md'
+    - '!**/tests/**'
+
 
 functions:
   hello:
