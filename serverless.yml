@@ -1,3 +1,7 @@
+service: dummy-next-lambda
+
+frameworkVersion: '3'
+
 myNextApp:
   component: "@sls-next/serverless-component@3.7.0"
   inputs:
